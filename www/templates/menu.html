@@ -18,18 +18,11 @@
     </ion-header-bar>
     <ion-content>
       <ion-list>
-        <ion-item menu-close ng-click="showModal()">
-          Modal
-        </ion-item>
-        <ion-item menu-close href="#/app/page">
-          Page
-        </ion-item>
-        <ion-item menu-close href="#/app/tabs">
-          Tabs
-        </ion-item>
-        <ion-item menu-close href="#/app/master">
-          Master
-        </ion-item>
+        <ion-item nav-clear menu-close ng-click="showModal()">Modal</ion-item>
+        <ion-item nav-clear menu-close href="#/app/page">Page</ion-item>
+        <ion-item nav-clear menu-close href="#/app/tabs/one/tabcontent">Tabs</ion-item>
+        <ion-item nav-clear menu-close href="#/app/master">Master</ion-item>
+        <ion-item nav-clear menu-close href="#/app/base/content">Split</ion-item>
       </ion-list>
     </ion-content>
   </ion-side-menu>

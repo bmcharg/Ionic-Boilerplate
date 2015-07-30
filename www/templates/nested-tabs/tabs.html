@@ -6,17 +6,17 @@ navigation history that also transitions its views in and out.
 <ion-tabs class="tabs-icon-top tabs-color-active-positive">
 
   <!-- Dashboard Tab -->
-  <ion-tab title="Tab One" icon-off="ion-android-checkbox-outline-blank" icon-on="ion-android-checkbox-blank" href="#/app/tabs/one">
+  <ion-tab title="Tab One" nav-clear icon-off="ion-android-checkbox-outline-blank" icon-on="ion-android-checkbox-blank" ui-sref="app.tabs.one.tabcontent">
     <ion-nav-view name="tab-one"></ion-nav-view>
   </ion-tab>
 
   <!-- Chats Tab -->
-  <ion-tab title="Tab Two" icon-off="ion-android-checkbox-outline-blank" icon-on="ion-android-checkbox-blank" href="#/app/tabs/two">
+  <ion-tab title="Tab Two" nav-clear icon-off="ion-android-checkbox-outline-blank" icon-on="ion-android-checkbox-blank" ui-sref="app.tabs.two">
     <ion-nav-view name="tab-two"></ion-nav-view>
   </ion-tab>
 
   <!-- Account Tab -->
-  <ion-tab title="Tab Three" icon-off="ion-android-checkbox-outline-blank" icon-on="ion-android-checkbox-blank" href="#/app/tabs/three">
+  <ion-tab title="Tab Three" nav-clear icon-off="ion-android-checkbox-outline-blank" icon-on="ion-android-checkbox-blank" ui-sref="app.tabs.three.content">
     <ion-nav-view name="tab-three"></ion-nav-view>
   </ion-tab>
 

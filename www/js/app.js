@@ -20,7 +20,10 @@ angular.module('starter', ['ionic', 'starter.controllers'])
   });
 })
 
-.config(function($stateProvider, $urlRouterProvider) {
+.config(function($ionicConfigProvider, $stateProvider, $urlRouterProvider) {
+
+  $ionicConfigProvider.views.maxCache(0);
+
   $stateProvider
 
   .state('app', {
@@ -43,40 +46,115 @@ angular.module('starter', ['ionic', 'starter.controllers'])
     url: "/tabs",
     views: {
       'menuContent': {
-        templateUrl: "templates/tabs.html"
+        templateUrl: "templates/nested-tabs/tabs.html"
       }
     }
   })
 
   .state('app.tabs.one', {
     url: "/one",
-    views: {
+    views: { 
       'tab-one': {
-        templateUrl: "templates/tab1.html"
+        templateUrl: "templates/nested-tabs/base.html"    
+      } 
+    }
+  })
+
+  .state('app.tabs.one.tabcontent', {
+    url: '/tabcontent',
+    views: {
+
+      // Side Menu
+      'tab-side-view': {
+        templateUrl: 'templates/nested-tabs/menu.html'
+      },
+
+      // Main Content
+      'tab-content-view': {
+        templateUrl: 'templates/nested-tabs/mainView.html'
       }
     }
+  })
 
+  // Sub Menu
+  .state('app.tabs.one.videoSubMenu', {
+    url: '/tabcontent/videoSubMenu',
+    views: {
+      'tab-side-view': {
+        templateUrl: 'templates/nested-tabs/subMenu.html'
+      }
+    }
   })
 
   .state('app.tabs.two', {
     url: "/two",
     views: {
       'tab-two': {
-        templateUrl: "templates/tab2.html"
+        templateUrl: "templates/nested-tabs/tab2.html"
       }
     }
-
   })
 
   .state('app.tabs.three', {
     url: "/three",
     views: {
       'tab-three': {
-        templateUrl: "templates/tab3.html"
+        templateUrl: "templates/nested-tabs/tab3.html"
       }
     }
-
   })
+
+
+  .state('app.tabs.three.content', {
+    url: "/content",
+    views: {
+      'tab2-side-view': {
+        templateUrl: 'templates/nested-tabs/menu2.html'
+      },
+
+      // Main Content
+      'tab2-content-view': {
+        templateUrl: 'templates/nested-tabs/mainView2.html'
+      }
+    }
+  })
+
+    .state('app.base', {
+      url: "/base",
+      views: { 
+        'menuContent': {
+          templateUrl: "templates/nested/base.html"    
+        } 
+      }
+    })
+
+    // the pet tab has its own child nav-view and history
+    .state('app.base.content', {
+      url: '/content',
+      views: {
+
+        // Side Menu
+        'side-view': {
+          templateUrl: 'templates/nested/menu.html'
+        },
+
+        // Main Content
+        'content-view': {
+          templateUrl: 'templates/nested/mainView.html'
+        }
+
+      }
+    })
+
+    // Sub Menu
+    .state('app.base.subMenu', {
+      url: '/content/subMenu',
+      views: {
+        'side-view': {
+          templateUrl: 'templates/nested/subMenu.html'
+        }
+      }
+    })
 
     .state('app.master', {
       url: "/master",
